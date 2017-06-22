@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="category"
+		addfieldpath="administrator/components/com_categories/models/fields">
+		<field
+			type="text"
+			name="name"
+			label="标题"
+			description="分类的标题"
+			required="true"
+		/>
+		<field
+			type="zmaxusercategory"
+			name="parent"
+			extension="com_zmaxcdn"
+			label="上级目录"
+			description="该分类的上级分类"
+			required="true"
+		/>			
+	</fieldset>
+</form>
+
+
+
+
+
+

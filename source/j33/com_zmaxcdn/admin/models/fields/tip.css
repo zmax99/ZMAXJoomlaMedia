@@ -1,0 +1,21 @@
+
+.zmax-hasTipPreview {
+    cursor: pointer;
+}
+
+#zmax-fieldtooltip {
+    background: #000 none repeat scroll 0 0;
+    color: #fff;
+    max-width: 60%;
+	padding:10px;	
+	border-radius:5px;
+	 /* for IE */
+	filter:alpha(opacity=80);
+	/* CSS3 standard */
+	opacity:0.8;
+}
+
+.zmax-filed-input{
+    border-radius: 0 !important;
+    border-right: 0 none !important;
+}

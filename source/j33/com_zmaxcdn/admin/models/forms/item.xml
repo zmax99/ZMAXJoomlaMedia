@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="main"
+			  label="编辑资源"
+			  description="编辑资源"
+			  addfieldpath="/administrator/components/com_zmaxcdn/models/fields" 
+		>
+		<field
+			type="zmaxfile"
+			name="path"
+			label="资源文件"
+			description="需要上传的资源文件"	
+			extension ="com_zmaxcdn"
+			required="true"
+		/>
+		
+		<field
+			type="hidden"
+			name="id"
+		/>
+		<field
+			type="hidden"
+			name="uid"
+		/>
+		<field
+			name="catid"
+			type="category"
+			extension="com_zmaxcdn"
+			class="input"
+			default=""
+			description="资源分类"
+			label="资源分类"
+		>
+			<option value="">选择分类</option>
+		</field>
+		
+		
+		<field
+			type="text"
+			name="description"
+			label="描述"
+			description="描述"
+			default="暂无"
+		/>
+		<field 
+			name="tags"
+			type="tag"
+			mode="ajax"
+			label="标签"
+			description="资源所属的标签"
+			class="inputbox small"
+			multiple="true"
+			/>
+	</fieldset>
+	<fields name="image">
+		<fieldset name="image" label="图片信息">
+			<field
+				type="media"
+				name="image_intro"
+				label="图片"
+				description="该资源的代表图片"			
+			/>
+			
+			<field
+				type="text"
+				name="image_intro_alt"
+				label="图片的ALT属性"
+				description="图片的ALT属性"
+				default="图片"
+			/>
+			
+			<field
+				type="text"
+				name="image_intro_caption"
+				label="图片的Title属性"
+				description="图片的Title属性"
+				default="这是一张图片"
+			/>
+		</fieldset>
+	</fields>
+	
+	<fields name="attr">
+		<fieldset name="attr" label="其他信息">
+			<field
+				type="text"
+				name="class"
+				label="CSS类名"
+				description="该文件将会使用的CSS类名"
+				default="zmaximage"
+			/>
+			<field
+				type="text"
+				name="height"
+				label="高度"
+				description="高度"
+				default=""
+			/>
+			<field
+				type="text"
+				name="width"
+				label="宽度"
+				description="高度"
+				default=""
+			/>
+		</fieldset>
+	</fields>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+

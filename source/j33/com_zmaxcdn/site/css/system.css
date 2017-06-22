@@ -1,0 +1,101 @@
+@import url(ui-dialog.css); 
+@import url(zmaxui/zmaxui.css); 
+/**
+ *	商城系统使用的CSS,这些CSS会引用于整个商城系统，而和商城的模板无关
+ *
+ *  2015-07-17  
+ *  南宁市程序人软件科技有限责任公司保留所有权利
+ */
+
+/**ZMAX支付方式所需要使用到的TAB的CSS样式控制**/ 
+#zmaxtab dl.system-zmaxtabs {
+	float: left;
+	margin-bottom: -1px;
+}
+#zmaxtab  dl.system-zmaxtabs dt.system-zmaxtabs {
+	float: left;
+	margin-left: 3px;
+	padding: 4px 10px;
+	background-color: #F0F0F0;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+#zmaxtab  dl.system-zmaxtabs dt:hover {
+	background-color: #F9F9F9;
+}
+#zmaxtab  dl.system-zmaxtabs dt.system-open {
+	background-color: #FFF;
+	border-bottom: 1px solid #FFF;
+}
+#zmaxtab  dl.system-zmaxtabs dt.system-zmaxtabs h3 {
+	margin: 0;
+	font-size: 1.1em;
+	font-weight: normal;
+}
+#zmaxtab  dl.system-zmaxtabs dt.system-zmaxtabs h3 a {
+	color: #0088CC;
+}
+#zmaxtab  dl.system-zmaxtabs dt.system-zmaxtabs h3 a:hover {
+	color: #005580;
+	text-decoration: none;
+}
+#zmaxtab  dl.system-zmaxtabs dt.system-open h3 a {
+	color: #000;
+	text-decoration: none;
+}
+#zmaxtab div.system-current dd.system-zmaxtabs {
+	margin: 0;
+	padding: 10px;
+	clear: both;
+	border: 1px solid #CCC;
+	background-color: #FFF;
+}
+
+
+
+/** 修复了.modal类在bootstarp中的冲突情况***/
+.zmaxui .modal {
+    display: block;
+    position: relative;
+    width: 100px;
+	margin-left:0px;
+	left:0;
+	overflow: hidden;
+	border:none;
+	border-radius:6px;
+	box-shadow:none;
+	top:0;
+}
+
+.zmaxui .modal.zmax-btn{
+	border:1px solid #dedede;
+}
+
+
+/** 修复搜索栏目高度不对的问题**/
+.zmaxui input#filter_search {
+    height: auto;
+}
+
+/***ZMAX新增的类***/
+.zmax-line {
+    border: 1px solid #dedede;
+    height: 1px;
+    margin: 5px;
+}
+/*修复了.thumbnail类在bootstarp中的冲突情况*/
+.zmaxui .thumbnail{
+	border:none;
+	background-color: #ffffff;
+    border-radius: 4px;
+    display: block;
+    line-height: 1.42857;
+    margin-bottom: 0px;
+    padding:5px;
+
+}
+.zmaxui a.thumbnail:hover{
+	border-color:#fff;
+	box-shadow: 0 0 0 0;
+}

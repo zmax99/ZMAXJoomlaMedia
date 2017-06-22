@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<metadata>
+	<layout title="ZMAX资源管理-分类列表">
+		<message>
+			展示分类列表
+		</message>
+	</layout>
+	
+	<fields name="request" >	
+		<fieldset name="request"
+				label="必填参数">
+			<field 
+			   type="category"
+			   name="ids"
+			   label="选择分类"
+			   extension="com_zmaxcdn"
+			   description="请选择分类"
+			   required="true"			   
+			   multiple="true"
+			   />
+		</fieldset>
+	</fields>
+	<fields name="params">
+		<fieldset name="params" label="显示设置">
+			<field 
+				type="text"
+				name="title_length"
+				label="标题的最大长度"
+				description="标题的最大长度"
+				default="25"
+				/>
+			<field 
+				type="text"
+				name="max_number"
+				label="记录的数量"
+				description="显示记录的最大数量"
+				default="10"
+				/>
+			<field 
+				type="list"
+				name="orderby"
+				label="排序"
+				description="排序的方式"
+				default="create_date desc"
+				>
+				<option value="create_date desc">最新</option>
+				<option value="views desc">最受欢迎</option>
+				<option value="hits desc">最受多下载</option>
+			</field>
+			<field 
+				type="radio"
+				name="show_title"
+				label="标题"
+				description="是否显示标题"
+				default="1"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+			<field 
+				type="radio"
+				name="show_doc_type"
+				label="文档类型"
+				description="是否显示文档类型"
+				default="0"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+			<field 
+				type="radio"
+				name="show_date"
+				label="日期"
+				description="是否显示文档日期"
+				default="0"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+			<field 
+				type="radio"
+				name="show_download"
+				label="下载按钮"
+				description="是否显示下载按钮"
+				default="1"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+			<field 
+				type="radio"
+				name="show_category"
+				label="分类"
+				description="是否显示分类"
+				default="0"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+			<field 
+				type="radio"
+				name="show_filesize"
+				label="文件大小"
+				description="是否显示文件大小"
+				default="0"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+			<field 
+				type="radio"
+				name="show_desc"
+				label="描述"
+				description="是否显示描述"
+				default="0"
+				class="btn-group btn-group-yesno"
+				>
+				<option value="1">是</option>
+				<option value="0">否</option>				
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="搜索"
+			hint="JSEARCH_FILTER"
+			class="js-stools-search-string"
+		/>
+		
+		
+		<field
+			name="published"
+			type="list"
+			label="状态"
+			description="状态"
+			onchange="this.form.submit();"
+			default=""
+			>
+			<option value="">选择状态</option>
+			<option value="1">启用</option>
+			<option value="0">未启用</option>
+		</field>
+	</fields>
+
+	
+	<fields name="list">
+		<field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+	
+</form>

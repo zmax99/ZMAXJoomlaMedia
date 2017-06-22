@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="qiniu_setting" label="七牛设置" description="在这里设置七牛相关账号信息">
+		<field type="note"
+			name="setnote"
+			label="七牛设置注意："
+			description="由于七牛官方API发生改变。如果你的空间是2016年后申请的，那么请创建区域为【华东】的空间。否则程序不能正常工作"
+			class="alert alert-danger"/>
+		<field name="accessKey" 
+			   type="text"
+			   default=""
+			   label="AK"
+			   description ="七牛网站上获得的AK值"
+				/>
+		<field
+			name="secretKey"
+			type="password"
+			label="SK"
+			description="七牛网站上获得的SK值"
+			/>
+		<field
+			name="bucket"			
+			type="text"
+			label="空间"
+			description="七牛网站上的空间"
+			/>
+		<field
+			name="domain"			
+			type="text"
+			label="七牛域名"
+			description="七牛网站上提供的域名"
+			/>
+	</fieldset>
+	<fieldset name="insert-config" label="插入资源设置" description="设置资源插入到编辑器时的动作">
+		<field name="warp-tag" 
+			   type="list"
+			   default="span"
+			   label="资源标签"
+			   description ="包裹媒体管理资源的HTML标签"
+			>
+			<option value="span">SPAN</option>
+			<option value="p">P</option>
+			<option value="div">DIV</option>
+		</field>
+		<field
+			name="warp-tag-classname"
+			type="text"
+			label="资源标签类名"
+			description="资源标签类名"
+			default="zmax-item-warp"
+			/>
+	</fieldset>
+	<fieldset name="permissions" label="权限配置" description="配置组件的权限" >
+		<field name="rules" type="rules" lable="权限配置" filter="rules" component="com_zmaxerp" section="component">
+		</field>
+	</fieldset>
+
+</config>

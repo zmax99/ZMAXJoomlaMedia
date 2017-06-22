@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+		<fieldset name="fielddetail"
+				  label="字段组详情"
+			>
+			<field
+				type="hidden"
+				name="id"
+			/>
+			<field
+				type="text"
+				name="title"
+				label="标题"
+				description="该字段组的标题"
+				required="true"
+			/>			
+			<field
+				type="textarea"
+				name="description"
+				label="字段的描述"
+				description="你对这个字段的描述"
+			/>
+			
+			
+			<field
+				type="tag"
+				name="tags"
+				label="字段组标签"
+				description="该字段组中的标签"
+				mode="ajax"
+				multiple="true"
+			/>			
+		</fieldset>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+

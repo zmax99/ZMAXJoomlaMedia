@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<metadata>
+	<layout title="ZMAX资源管理-资源列表">
+		<message>
+			展示一个分类中的资源列表
+		</message>
+	</layout>
+	
+	<fields name="request" >	
+		<fieldset name="request"
+				label="必填参数">
+			<field 
+			   type="category"
+			   name="id"
+			   label="选择分类"
+			   extension="com_zmaxcdn"
+			   description="请选择一个分类"
+			   required="true"
+			   />
+		</fieldset>
+	</fields>
+</metadata>

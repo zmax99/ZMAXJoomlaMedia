@@ -1,0 +1,108 @@
+.zmaximage {
+    max-height: 60px;
+    max-width: 50px;
+    overflow: hidden;
+}
+
+
+#adminForm a.zmaxinsert 
+{
+    cursor: pointer;
+}
+#adminForm a.zmaxinsert:hover
+{
+    cursor: pointer;
+}
+
+
+#modal #uploader .placeholder {
+    min-height: 150px;
+    padding-top: 50px;
+	border:none;
+}
+
+#modal .wu-example {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#modal .wu-example span {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
+#modal .webuploader-pick {
+    background: #00b7ee none repeat scroll 0 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 44px;
+    margin: 0 auto 20px;
+    padding: 0 30px;
+}
+
+#modal .wu-example p {
+    color: #ccc;
+    font-size: 18px;
+}
+
+/*Tab类*/
+
+
+dl.tabs {
+	float: left;
+	margin-bottom: -1px;
+}
+dl.tabs dt.tabs {
+	float: left;
+	margin-left: 3px;
+	padding: 4px 10px;
+	background-color: #F0F0F0;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+dl.tabs dt:hover {
+	background-color: #F9F9F9;
+}
+dl.tabs dt.open {
+	background-color: #FFF;
+	border-bottom: 1px solid #FFF;
+}
+dl.tabs dt.tabs h3 {
+	margin: 0;
+	font-size: 1.1em;
+	font-weight: normal;
+}
+dl.tabs dt.tabs h3 a {
+	color: #0088CC;
+}
+dl.tabs dt.tabs h3 a:hover {
+	color: #005580;
+	text-decoration: none;
+}
+dl.tabs dt.open h3 a {
+	color: #000;
+	text-decoration: none;
+}
+div.current dd.tabs {
+	margin: 0;
+	padding: 10px;
+	clear: both;
+	border: 1px solid #CCC;
+	background-color: #FFF;
+	overflow: hidden;
+}
+
+
+.js-stools-search-string {
+    float: left;
+}
+

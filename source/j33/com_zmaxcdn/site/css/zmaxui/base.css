@@ -1,0 +1,46 @@
+.zmax-down-cate{
+	min-height:224px;
+	line-height: 23px;
+	border-left:2px solid #3598db;
+	border-right:2px solid #3598db;
+	border-bottom:2px solid #3598db;
+	margin-bottom: 30px;
+}
+.head-title th a{
+	color:#fff;
+}
+.head-title th a:hover{
+	text-decoration:none;
+}
+.js-stools-field-list select{
+	padding-right:8px;
+}
+.zmaxui .down-cate{
+	text-align:center;
+	background-color:#3598db;
+	margin-top:0px;
+	
+}
+.zmax-down-cate h3.heading-style-3{
+	color:#fff;
+}
+.items-info{
+	padding:15px;
+}
+.zmax-down-cate-readmore{
+	margin-bottom:15px;
+	margin-top:15px;
+}
+.zmaxui .down-more{
+	padding:6px 12px;
+	background-color:#444;
+	color:#fff;	
+}
+.zmaxui .down-more:hover{
+	color:#3598db;
+	text-decoration:none;
+}
+.item-title{
+	overflow:hidden;
+	text-overflow:ellipsis;
+}

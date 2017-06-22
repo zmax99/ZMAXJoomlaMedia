@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<field
+		type="hidden"
+		name="id"
+	/>
+	<field
+		type="text"
+		name="title"
+		label="标题"
+		description="该字段组的标题"
+		required="true"
+		class="input-xxlarge input-large-text"
+		size="40"
+	/>
+	<field
+		type="text"
+		name="alias"
+		label="别名"
+		class=""
+		description="标题的别名，系统使用"	
+		hint="无实际意义，可以保持默认"
+		size="40" 				
+	/>	
+	<fieldset name="main"
+			  label="设置概述"
+		>
+		<field
+			type="list"
+			name="client"
+			label="应用范围"
+			description="配置文件应用的范围"
+			default="admin"
+			required="true"
+			>
+			<option value="admin">后台</option>
+			<option value="site">前台</option>
+		</field>
+		<field
+			type="editor"
+			name="description"
+			id="description"
+			label="描述"
+			description="该配置文件的描述"
+			rows="5"
+			filter="JComponentHelper::filterText"
+			cols="200"
+		/>
+		
+	</fieldset>
+	<fields name="config">
+		<fieldset name="basic" label="设置详情">
+			<field
+				type="text"
+				name="max_size"
+				label="最大文件尺寸"
+				description="允许上传的最大的文件大小,单位是(M)"
+				default="4"
+			/>
+			<field
+				type="textarea"
+				name="file_type"
+				label="文件类型"
+				description="允许上传的文件的类型,多种类型使用,分开"
+				default="*"
+			/>
+			<field
+				type="radio"
+				name="show_file_list"
+				label="显示文件列表"
+				description="是否显示已经上传的文件的列表"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_search_tool"
+				label="显示搜索工具"
+				description="设置是否显示搜索工具"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			
+			<field
+				type="radio"
+				name="allow_download"
+				label="允许下载"
+				description="是否允许用户从文件列表中下载文件"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="allow_guest_upload"
+				label="允许游客上传"
+				description="是否允许未登录用户上传"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			
+			<field
+				type="list"
+				name="allow_see_other"
+				label="查看权限"
+				description="用户文件列表的权限"
+				default="0"
+			>
+				<option value="1">能看到其他用户上传</option>
+				<option value="0">只能看到自己的上传</option>
+			</field>
+			<field
+				type="category"
+				name="catid"
+				label="指定分类"
+				description="制定资源上传的分类"
+				extension="com_zmaxcdn"
+				default=""
+			>
+				<option value="">上传者选择</option>
+			</field>
+			<field
+				type="text"
+				name="extension"
+				label="配置文件的扩展"
+				description="开发者使用，这是ZMAX媒体管理组件提供的对外接口，如果不是开发者，请保持不变"
+				default="com_content"
+			/>
+			<field
+				type="text"
+				name="filter_extension"
+				label="扩展选择"
+				description="开发者使用，这是ZMAX媒体管理组件提供的对外接口，如果不是开发者，请保持不变。该接口可以让你指定在插入字段的时候按照资源使用的扩展来进行过滤。默认不按照资源所属的扩展类型进行过滤。如果你需要启用。请输入组件的名称。如果是多个组件，请用分号（；）隔开。如：com_zmaxcdn;com_content;com_zmaxshop"
+				default=""
+			/>
+			<field
+				type="text"
+				name="upload_btn_text"
+				label="上传按钮的文本"
+				description="上传按钮的文本"
+				default="点击上传"
+			/>
+			<field
+				type="text"
+				name="drag_text"
+				label="拖放的提示信息"
+				description="拖放上传的提示信息"
+				default="你可以直接将文件拖动到这个区域"
+			/>
+			<field
+				type="radio"
+				name="show_local_upload"
+				label="显示本地上传"
+				description="显示本地上传"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			<field
+				type="radio"
+				name="show_qiniu_upload"
+				label="显示七牛上传"
+				description="显示七牛上传"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_prev"
+				label="显示预览"
+				description="在文件列表中显示预览"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_category"
+				label="显示分类"
+				description="在文件列表中显示分类"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_download"
+				label="显示下载"
+				description="在文件列表中显示下载"
+				default="1"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_size"
+				label="显示大小"
+				description="在文件列表中显示文件大小"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_doctype"
+				label="显示文档类型"
+				description="在文件列表中显示文档类型"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_date"
+				label="显示日期"
+				description="在文件列表中显示日期"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+			<field
+				type="radio"
+				name="show_title_remark"
+				label="显示备注"
+				description="在文件列表中显示备注"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			<field
+				type="radio"
+				name="show_other_id"
+				label="显示第三方ID"
+				description="第三方ID为开发者选项，该选项设计的意义就是为了让第三方扩展充分的访问媒体管理中资源，而让第三方使用的附加ID"
+				default="0"
+				class="btn-group btn-group-yea-no"
+			>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</field>
+			
+		</fieldset>
+	</fields>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+

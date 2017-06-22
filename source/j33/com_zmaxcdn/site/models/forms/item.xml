@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="itemdetail"
+			  label="编辑资源"
+			  description="编辑资源"
+		>
+		<field
+			type="hidden"
+			name="id"
+		/>
+		<field
+			type="hidden"
+			name="uid"
+		/>
+		<field
+			name="catid"
+			type="category"
+			extension="com_zmaxcdn"
+			class="input"
+			default=""
+			description="资源分类"
+			label="资源分类"
+		>
+			<option value="">选择分类</option>
+		</field>
+		
+		
+		<field
+			type="text"
+			name="description"
+			label="描述"
+			description="描述"
+			default="暂无"
+		/>
+	</fieldset>
+	<fields name="attr">
+		<field
+			type="text"
+			name="class"
+			label="CSS类名"
+			description="该文件将会使用的CSS类名"
+			default="zmaximage"
+		/>
+		
+		<field
+			type="text"
+			name="alt"
+			label="图片的ALT属性"
+			description="图片的ALT属性"
+			default="图片"
+		/>
+		
+		<field
+			type="text"
+			name="title"
+			label="图片的Title属性"
+			description="图片的Title属性"
+			default="这是一张图片"
+		/>
+		<field
+			type="text"
+			name="height"
+			label="图片的高度属性"
+			description="图片的高度属性"
+			default=""
+		/>
+		<field
+			type="text"
+			name="width"
+			label="图片的宽度属性"
+			description="图片的高度属性"
+			default=""
+		/>
+	</fields>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+

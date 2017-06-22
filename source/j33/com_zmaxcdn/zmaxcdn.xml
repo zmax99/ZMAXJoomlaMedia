@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0.0" method="upgrade">
+        <name>COM_ZMAXCDN</name>        
+        <creationDate>2017-06-20</creationDate>
+        <author>ZMAX团队</author>
+        <authorEmail>zhang19min88@163.com</authorEmail>
+        <authorUrl>http://www.zmax99.com</authorUrl>
+        <copyright>南宁市程序人软件科技有限责任科技有限责任公司保留所有权利！</copyright>
+        <license>License GPL2.0 or more</license>
+        <version>4.3.1</version>
+        <description>
+			<![CDATA[			
+			  <h2>ZMAX团队为中国用户提供的JOOMLA媒体管理解决方案</h2>
+			 <div>
+				<h4>主要特性:</h4>
+				<ul>
+					<li>支持中文名称的文件</li>
+					<li>支持播放视频</li>
+					<li>支持任何格式文件的下载上传</li>
+					<li>支持任何格式的文件上传。word文档，Excel文档，PDF文档，MP3 ,MP4 ,ZIP,RAR等等</li>
+					<li>支持七牛CDN,为你的JOOMLA网站加速</li>
+					<li>支持快速上传，上传插入一步到位</li>
+					<li>支持图片搜索功能，快速定位</li>
+					<li>支持拖动上传，批量上传</li>
+					<li>支持大文件自动分片上传</li>
+					<li>支持下载权限控制[付费版]</li>
+					<li>支持图片水印[付费版]</li>
+					<li>每一个用户只能管理自己的文件</li>
+				</ul>
+			 </div>
+				<p class="text-success">
+					该扩展是ZMAX团队支持<a href="http://www.joomlachina.cn/guanyu-joomla/joomla-tuiguang-jihua" target="_blank" alt="JOOMLA中国">JOOMLA中国推广计划</a>而免费发布的一款扩展，主要解决了JOOMLA对于中文若干不适合的问题。如果你在使用该扩展中有任何的问题，请联系我们。
+					我们的网址 <a href="http://www.zmax99.com" target="_blank">http://www.zmax99.com</a>
+				</p>
+			  <div class="pull-right">
+				<div><img src="../media/zmaxcdn/images/zmax_logo.png" alt="ZMAX程序人LOGO" /></div>
+				<h3>ZMAX程序人<small>中国专业的Joomla扩展开发团队！</small></h3>				
+			 </div>
+			]]>
+		</description>
+			
+		<!-- run install script-->
+		<scriptfile>script.php</scriptfile>
+		<install> <!--  run on install-->
+			<sql>
+				<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			</sql>
+		</install>
+		
+		<uninstall>
+			<sql>
+				<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+			</sql>
+		</uninstall>
+		
+		<update>
+			<schemas>
+				<schemapath type="mysql">sql/updates/mysql</schemapath>
+			</schemas>
+		</update>
+		
+		<files folder="site">
+			<filename>index.html</filename>
+			<filename>controller.php</filename>
+			<filename>zmaxcdn.php</filename>
+			<folder>controllers</folder>
+			<folder>css</folder>
+			<folder>helpers</folder>
+			<folder>js</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+		</files>
+		<media destination="zmaxcdn" folder="media/zmaxcdn">
+			<folder>images</folder>
+			<folder>videos</folder>
+			<folder>assets</folder>
+			<filename>index.html</filename>
+		</media>
+ 
+        <administration>
+				<!-- Administration Menu Section-->
+		        <menu>COM_ZMAXCDN_MENU</menu>
+				<!--  Administration Main File Copy Section -->
+				<files folder="admin">
+					<folder>controllers</folder>
+					<folder>excels</folder>
+					<folder>source</folder>
+					<folder>helpers</folder>
+					<folder>css</folder>
+					<folder>images</folder>
+					<folder>js</folder>
+					<folder>language</folder>
+					<folder>libs</folder>
+					<folder>extensions</folder>
+					<folder>models</folder>
+					<folder>sql</folder>
+					<folder>tables</folder>
+					<folder>views</folder>	
+					<filename>access.xml</filename>
+					<filename>config.xml</filename>
+					<filename>controller.php</filename>
+					<filename>index.html</filename>
+					<filename>zmaxcdn.php</filename>
+					<filename>zmax_define.php</filename>
+				</files>
+				
+        </administration>
+		<updateservers>
+			<server type="extension" priority="1" name="ZMAX媒体管理组件" >http://www.zmax99.com/autoupdate/auto-update-com-zmaxcdn.xml</server>
+		</updateservers>
+</extension>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			hint="文件名，类型，大小"
+			class="js-stools-search-string"
+		/>
+		<field
+			name="category_id"
+			extension="com_zmaxcdn"
+			type="category"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_CATEGORY</option>
+		</field>
+		<field
+			name="doc_type"
+			type="list"
+			label="选择类型"
+			description="按照文件类型过滤"
+			onchange="this.form.submit();"
+			>
+			<option value="">选择类型</option>
+			<option value="text">文本文件</option>
+			<option value="package">压缩包</option>
+			<option value="image">图片</option>
+			<option value="video">视频</option>
+			<option value="doc">word文档</option>
+			<option value="excel">Excel文档</option>
+			<option value="pdf">Pdf文档</option>
+			<option value="unknow">其他文档</option>
+		</field>
+	</fields>
+
+	
+	<fields name="list">
+		<field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+	
+</form>
