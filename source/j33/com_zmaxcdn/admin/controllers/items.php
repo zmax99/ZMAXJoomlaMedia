@@ -22,6 +22,38 @@ class zmaxcdnControllerItems extends JControllerAdmin
 		return parent::getModel($name , $prefix ,$config);
 	 }
 	 
+	 public function ajaxDelete()
+	 {
+		$app = JFactory::getApplication();
+		$ids = $app->input->get("cid","","ARRAY");
+		
+		JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_zmaxcdn/tables');
+		$table = JTable::getInstance('item', 'Table', array());
+		foreach($ids as $id)
+		{
+			$item = zmaxcdnItemHelper::getItemById($id);
+			
+			//测试是否能够删除文件 
+			if($this->canDeleteFile($item))
+			{
+				//删除文件
+				if($item->local_path)
+				{
+					$file = JPath::clean(JPATH_SITE.DS.$item->local_path);
+					if(JFile::exists($file))
+					{
+						JFile::delete($file);
+					}
+				}
+			}
+			
+			//在这里调用删除吧
+			$table->delete($id);
+		}
+		echo "删除成功!";
+		
+		$app->close();
+	 }
 	 public function delete()
 	 {
 		 //return parent::delete();
@@ -45,7 +77,6 @@ class zmaxcdnControllerItems extends JControllerAdmin
 			}
 		}
 		return parent::delete();
-		
 	 }
 	 
 	 //是否能够删除文件

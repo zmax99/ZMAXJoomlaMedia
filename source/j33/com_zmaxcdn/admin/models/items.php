@@ -45,7 +45,7 @@ class zmaxcdnModelItems extends JModelList
 	}
 	
 	protected function getListQuery()
-	 {
+	{
 		$db =  JFactory::getDBO();
 		$query = $db->getQuery(true);
 		$query->select("i.id ,i.hits, i.published,
@@ -123,6 +123,7 @@ class zmaxcdnModelItems extends JModelList
 				$config = json_decode($config);
 			}
 			
+			$session->set("zmaxcdn.field.config",json_encode($config));
 			/*
 			/***************************************************************************
 			 * 该部分的设计可能存在问题，需要重新设计 目前暂时注释掉                   *
@@ -170,7 +171,6 @@ class zmaxcdnModelItems extends JModelList
 		$orderCol = $this->state->get("list.ordering" ,'id');
 		$orderDirn = $this->state->get("list.direction",'desc');
 		$query->order($db->escape($orderCol).' '.$db->escape($orderDirn));
-		
 		
 		return $query;
 	 }

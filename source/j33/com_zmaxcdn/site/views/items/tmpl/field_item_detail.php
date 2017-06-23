@@ -16,7 +16,7 @@ defined('_JEXEC') or die('you can not access this file!');
 ?>
 <div class="zattach-container">
 	<div class="zattach-inner">
-		<div class="attach-detail-container">
+		<div class="attach-detail-container system-attach-detail-container" data="">
 			<h4>附件详情</h4>
 			<div class="zattach-img-container">
 				<img  class="responsive-img system-at-img"  width="100px"  src="#" alt="图片">
@@ -28,7 +28,7 @@ defined('_JEXEC') or die('you can not access this file!');
 					<div class="file-size system-at-size"></div>
 					<div class="dimensions system-at-dim"></div>				
 					<a class="edit-attachment system-at-edit-link" href="#" target="_blank">编辑图像</a>
-					<a class="button-link system-at-delete-link delete-attachment">永久删除</a>
+					<a href="javascript:void(0);" class="button-link system-at-delete-link delete-attachment">永久删除</a>
 				</div>
 			</div>
 		</div>
@@ -39,13 +39,15 @@ defined('_JEXEC') or die('you can not access this file!');
 				<input type="text" class="system-at-set-url-input" value="" readonly="">
 			</label>
 			<label class="setting" data-setting="title">
-				<span class="name">标题</span>
+				<span class="name">文件名</span>
 				<input type="text" class="system-at-set-title-input" value="">
 			</label>	
 			<label class="setting" data-setting="caption">
 				<span class="name">说明</span>
 				<textarea class="system-at-set-caption-input"></textarea>
-			</label>	
+			</label>
+			
+			<?php if(0):?>
 			<label class="setting" data-setting="alt">
 				<span class="name">替代文本</span>
 				<input class="system-at-set-alt-input" type="text" value="">
@@ -54,12 +56,12 @@ defined('_JEXEC') or die('you can not access this file!');
 				<span class="name">图像描述</span>
 				<textarea class="system-at-set-desc-input"></textarea>
 			</label>
-
+			<?php endif;?>
 			<div class="attachment-display-settings">
-				<h4>附件显示设置</h4>
+				<h4>附件显示设置 <small>专业版使用</small></h4>
 					<label class="setting">
 						<span>对齐方式</span>
-						<select class="alignment" data-setting="align" data-user-setting="align">
+						<select class=" alignment" data-setting="align" data-user-setting="align">
 							<option value="left">左</option>
 							<option value="center">中</option>
 							<option value="right">右</option>

@@ -1,74 +1,21 @@
-<?php 
+<?php
 /**
- *	description:ZMAX媒体管理组件  资料控制器
+ *	description:ZMAX媒体管理组件 资料控制器
  *  author：min.zhang
  *  Email:zhang19min88@163.com
  *	Url:http://www.zmax99.com
  *  copyright:南宁市程序人软件科技有限责任公司保留所有权利
- *  date:2015-10-11
- * 	@license GNU General Public License version 3, or later
+ *  date:2015-08-24
  *  check date:2016-07-11
  *  checker :min.zhang
- *  modified:min.zhang
- *  modify date:2017-06-21
+ *  @license GNU General Public License version 3, or later
  */
 defined('_JEXEC') or die('you can not access this file!');
+
 
 jimport('joomla.application.component.controllerform');	
 class zmaxcdnControllerItem extends JControllerForm
  { 
-	
-	public function uploadInsert()
-	{
-		$jinput = JFactory::getApplication()->input;
-		$data = $jinput->get('jform','','array');
-		
-		$file = $jinput->files->get('jform');
-		$data = array_merge($data, $file);		
-		
-		
-		$model = $this->getModel();
-		if(!$model->save($data))
-		{
-			return false;
-		}
-		
-		
-		$session = JFactory::getSession();
-		$data = $session->get("com_zmaxcdn.item.data");
-		$data = json_decode($data);
-		
-		
-		$params = JComponentHelper::getParams("com_zmaxcdn");
-		$domain = $params->get("domain");
-		
-		$path = "components/com_zmaxcdn/".$data->local_path;
-		$url = "administrator/".$path;
-		if($data->cdn_path)
-		{
-			$url = "http://".$domain."/".$data->cdn_path;
-		}
-		$srcName=$data->name;
-		$isImage = true;
-		
-		
-		$js='
-			<script>
-				var tag;
-				tag=\'<img class="zmax_upload_image" src="'.$url.'" alt="'.$srcName.'" />\';
-				window.parent.jInsertEditorText(tag, "jform_articletext");
-				window.parent.SqueezeBox.close();				
-			</script>
-		';
-		
-		$message= $js;
-		//JLog::add($message,JLOG::DEBUG ,'zmax');
-		echo $message;
-		//$this->setRedirect($link,$message);
-		
-	
-	}
-	
 	public function loadItem()
 	{
 		$app = JFactory::getApplication();
@@ -77,14 +24,12 @@ class zmaxcdnControllerItem extends JControllerForm
 		{
 			return null;
 		}
-		$db = JFactory::getDBO();
-		$query = $db->getQuery(true);
-		$query->select("*")->from("#__zmaxcdn_item")->where("id=".$id);
-		$db->setQuery($query);
-		$item = $db->loadObject();
+		
+		$item = zmaxcdnItemHelper::getItemById($id);
 		if($item)
 		{
-			$item->url  = zmaxcdnHelper::getItemPath($item);
+			//$item->url  = zmaxcdnItemHelper::getItemUrl($item);
+			$item->url  = zmaxcdnItemHelper::getItemValue($item);
 		}
 		$item = $this->formatItemForAjax($item);
 		echo json_encode($item);
@@ -102,6 +47,22 @@ class zmaxcdnControllerItem extends JControllerForm
 		$item->alt="";
 		return $item;
 	}
+	
+	public function ajaxUpdate()
+	{
+		$app = JFactory::getApplication();
+		$id = $app->input->get("id");
+		$name = $app->input->get("name");
+		$description = $app->input->get("description");
+		$item = zmaxcdnItemHelper::getItemById($id);
+		$item->name = $name;
+		$item->description = $description;
+		$db = JFactory::getDBO();
+		$db->updateObject("#__zmaxcdn_item",$item,"id");
+		echo "更新信息成功!";
+		$app->close();
+	}
+	
  }	
 	
 

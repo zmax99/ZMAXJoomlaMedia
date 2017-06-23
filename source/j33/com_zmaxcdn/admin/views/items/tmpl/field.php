@@ -18,8 +18,6 @@ JHtml::_('jquery.framework');
 JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 
-$this->listOrder = $this->state->get('list.ordering');
-$this->listDirn = $this->state->get('list.direction');
 $this->function = JRequest::getCmd('function','');
 $curId = $this->state->get('filter.category_id');
 $this->category_id=$curId;
@@ -60,7 +58,7 @@ else
 {
 	$session->set("zmaxcdn.field.function",$this->function);	
 }
-$this->task = $session->get("zmaxcdn.field.task","upload.fieldUploadAndInsert");
+$this->task = $session->get("zmaxcdn.field.task","upload.uploadAndInsert");
 $this->caller = JFactory::getApplication()->input->get("caller",'plugin',"STRING");
 
 
@@ -68,6 +66,8 @@ $url = Juri::getInstance()->toString();
 $user = JFactory::getUser();
 $treeCategory = new zmaxtreeCategory();
 $items =$treeCategory->loadCategory("com_zmaxcdn",$user->id,1,1,$curId);
+
+
 ?>
 <script type="text/javascript">
 // 添加全局站点信息
@@ -79,6 +79,7 @@ var FILE_SIZE_LIMIT = '<?php echo $this->config->max_size;?>';
 var FILE_TYPE_LIMIT = '<?php echo $this->config->file_type;?>';
 var UPLOAD_BTN_TEXT = '<?php echo $this->config->upload_btn_text;?>';
 var YOU_QINIU_DOMAIN = '<?php echo $yourQiNiuDomain;?>';
+var ZMAX_SYSTEM_AJAX_TOKEN='<?php echo JSession::getFormToken()."=1"; ?>';
 </script>
 
 
@@ -116,6 +117,7 @@ var YOU_QINIU_DOMAIN = '<?php echo $yourQiNiuDomain;?>';
 										<div class="items" >
 											<?php echo $this->loadTemplate('item_filter');?>
 											<?php echo $this->loadTemplate('items');?>
+											<?php  echo $this->pagination->getListFooter();?>
 										</div>
 									</div>
 									<div class="detail-container">
@@ -134,13 +136,13 @@ var YOU_QINIU_DOMAIN = '<?php echo $yourQiNiuDomain;?>';
 							<div class="zmaxui-col-md-9">
 								<div class="zselected-container">
 									<div class="">
-										已选择<span class="system-no-wrap">1<span>个<br/>
-										<span>清空</span>
+										已选择<span class="system-no-container">0</span>个<br/>
+										<span><a href="javascript:void(0);" class="system-clear-selected layui-disabled">清空</a></span>
 									</div>
 								</div>
 							</div>
 							<div class="zmaxui-col-md-3">
-								<div class="btn btn-primary pull-right system-insert-btn insert-btn " function="window.parent.<?php echo $this->function;?>" data="" >
+								<div class="btn btn-primary pull-right system-insert-btn insert-btn layui-disabled " function="window.parent.<?php echo $this->function;?>" data="" >
 									插入至文章
 								</div>
 							</div>
@@ -176,18 +178,35 @@ var YOU_QINIU_DOMAIN = '<?php echo $yourQiNiuDomain;?>';
 		  </div>
 		</div>
 	</div>
-    <div class="layui-tab-item">内容3</div>
+    <div class="layui-tab-item">
+	<div class="layui-tab layui-tab-card">
+		  <ul class="layui-tab-title">
+			<li class="layui-this">上传设置</li>
+			<li>缩略图设置</li>
+		  </ul>
+		  <div class="layui-tab-content">
+			<div class="layui-tab-item layui-show">
+				<div class="info-container"><p>专业版提供参数设置</p></div>
+			</div>
+			<div class="layui-tab-item">
+				<div class="info-container"><p>专业版提供参数设置</p></div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+	</div>
   </div>
 </div> 
 <?php echo JHtml::_('form.token');?>     
 </form>	
+
 <script>
-//一般直接写在一个js文件中
 layui.tree({
 	  elem: '#tree-category' //传入元素选择器
 	  ,nodes: <?php echo json_encode($items);?>
 	});		
 </script> 
-<!--  ZMAX媒体管理组件的 全局配置文件-->
+
 
 				

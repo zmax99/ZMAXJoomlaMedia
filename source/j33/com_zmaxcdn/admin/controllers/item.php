@@ -48,6 +48,20 @@ class zmaxcdnControllerItem extends JControllerForm
 		return $item;
 	}
 	
+	public function ajaxUpdate()
+	{
+		$app = JFactory::getApplication();
+		$id = $app->input->get("id");
+		$name = $app->input->get("name");
+		$description = $app->input->get("description");
+		$item = zmaxcdnItemHelper::getItemById($id);
+		$item->name = $name;
+		$item->description = $description;
+		$db = JFactory::getDBO();
+		$db->updateObject("#__zmaxcdn_item",$item,"id");
+		echo "更新信息成功!";
+		$app->close();
+	}
 	
 	/**
 	 * Method to run batch operations.

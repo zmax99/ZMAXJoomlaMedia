@@ -14,6 +14,7 @@
  */
 defined('_JEXEC') or die('you can not access this file!');
 ?>
+
 <div class="zitemlist-container">
 <?php if (empty($this->items)) : ?>
 	<div class="alert alert-no-items">
@@ -40,3 +41,4 @@ defined('_JEXEC') or die('you can not access this file!');
 	</ul>
 <?php endif;?>
 </div>
+

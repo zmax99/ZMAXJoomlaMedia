@@ -31,7 +31,13 @@ $sortField = $sorts["list_fullordering"];
 			<?php echo $sortField->input; ?>
 		</div>
 		<div class="zmaxui-col-md-4 text-right pull-right">	
-			<?php echo $searchField->input;?>
+			
+			<div class="btn-wrapper input-append">
+				<?php echo $searchField->input;?>
+				<button type="submit" class="btn hasTooltip" title="" data-original-title="搜索">
+					<span class="icon-search"></span>
+				</button>
+			</div>
 		</div>
 	</div>	
 </div>
