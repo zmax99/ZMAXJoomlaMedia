@@ -24,11 +24,14 @@ $listOrder = $this->state->get('list.ordering');
 $listDirn = $this->state->get('list.direction');
 
 $doc = JFactory::getDocument();
-$doc->addStyleSheet("components/com_zmaxcdn/css/zmaxcdn.css");
-$doc->addScript("../components/com_zmaxcdn/js/zmaxcdn_download.js");
-$doc->addStyleSheet("components/com_zmaxcdn/css/ui-dialog.css");
-$doc->addScript("components/com_zmaxcdn/js/dialog-min.js");
-$doc->addScript("components/com_zmaxcdn/js/zmaxcdn.js");
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/zmaxcdn.css");
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/ui-dialog.css");
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/ui.css");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/layui/lay/dest/layui.all.js");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/zmaxcdn.js");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/dialog-min.js");
+
+
 //得到配置设置
 $config = zmaxcdnConfigHelper::loaddefaultConfig();
 ?>

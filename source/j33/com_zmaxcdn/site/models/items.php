@@ -15,7 +15,7 @@
 defined('_JEXEC') or die('you can not access this file!');
 class zmaxcdnModelItems extends JModelList
 {
-	
+	protected $_id;//当前分类的ID
 	public function __construct($config = array())
 	{
 		if(empty($config['filter_fields']))
@@ -45,7 +45,7 @@ class zmaxcdnModelItems extends JModelList
 	}
 	
 	protected function getListQuery()
-	 {
+	{
 		$db =  JFactory::getDBO();
 		$query = $db->getQuery(true);
 		$query->select("i.id ,i.hits, i.published,
@@ -60,7 +60,10 @@ class zmaxcdnModelItems extends JModelList
 
 		//处理文件的分类		
 		//系统会自动列出所有的子分类的内容，这里可能会涉及到分页
-		if ($catid = $this->getState('filter.category_id'))
+		
+
+		$catid = $this->_id;//当前的ID
+		if ($catid)
 		{
 			$ids = zmaxcdnCommonHelper::getChildCateIds($catid);
 			$ids = implode(',',$ids);
@@ -123,6 +126,7 @@ class zmaxcdnModelItems extends JModelList
 				$config = json_decode($config);
 			}
 			
+			$session->set("zmaxcdn.field.config",json_encode($config));
 			/*
 			/***************************************************************************
 			 * 该部分的设计可能存在问题，需要重新设计 目前暂时注释掉                   *
@@ -175,6 +179,10 @@ class zmaxcdnModelItems extends JModelList
 		return $query;
 	 }
 	 
+	 public function getCurCategoryId()
+	 {
+		 return $this->_id;
+	 }
 
 	protected function populateState($ordering=null , $direction=null )
 	{
@@ -182,6 +190,7 @@ class zmaxcdnModelItems extends JModelList
 		$session = JFactory::getSession();
 		$cookie = JFactory::getApplication()->input->cookie;
 		$catid = $app->input->get('catid', '', 'INT');
+		
 		if(!$catid)
 		{
 			$catid = $session->get("com_zmaxcdn.last_catid");
@@ -191,12 +200,12 @@ class zmaxcdnModelItems extends JModelList
 			}
 		}
 		
-		$this->setState('filter.category_id',$catid);	
 		//STEP 1 将catid 存储到session中
 		$session->set("com_zmaxcdn.last_catid",$catid);
 		//STEP 2 将catid 存储到cookie中
 		$cookie->set("com_zmaxcdn_last_catid",$catid);
-			
+		
+		$this->_id = $catid;	
 		
 		// List state information.
 		parent::populateState($ordering, $direction);

@@ -27,7 +27,7 @@ defined('_JEXEC') or die('you can not access this file!');
 					<div class="uploaded system-at-date"></div>
 					<div class="file-size system-at-size"></div>
 					<div class="dimensions system-at-dim"></div>				
-					<a class="edit-attachment system-at-edit-link" href="#" target="_blank">编辑图像</a>
+					<a class="edit-attachment system-zmax-todo system-at-edit-link" href="javascript:void(0)" target="_blank">编辑图像</a>
 					<a href="javascript:void(0);" class="button-link system-at-delete-link delete-attachment">永久删除</a>
 				</div>
 			</div>
@@ -56,7 +56,7 @@ defined('_JEXEC') or die('you can not access this file!');
 				<span class="name">图像描述</span>
 				<textarea class="system-at-set-desc-input"></textarea>
 			</label>
-			<?php endif;?>
+			
 			<div class="attachment-display-settings">
 				<h4>附件显示设置 <small>专业版使用</small></h4>
 					<label class="setting">
@@ -88,6 +88,7 @@ defined('_JEXEC') or die('you can not access this file!');
 					</select>
 				</label>
 			</div>
+			<?php endif;?>
 		</div>
 	</div>
 </div>

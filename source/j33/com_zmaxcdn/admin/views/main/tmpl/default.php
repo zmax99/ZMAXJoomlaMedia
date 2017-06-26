@@ -19,10 +19,14 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 
 $doc = JFactory::getDocument();
-$doc->addStyleSheet("components/com_zmaxcdn/css/zmaxcdn.css");
-$doc->addStyleSheet("components/com_zmaxcdn/css/ui-dialog.css");
-$doc->addScript("components/com_zmaxcdn/js/dialog-min.js");
-$doc->addScript("components/com_zmaxcdn/js/zmaxcdn.js");
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/zmaxcdn.css");
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/ui-dialog.css");
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/ui.css");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/layui/lay/dest/layui.all.js");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/zmaxcdn.js");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/dialog-min.js");
+
+
 $cpInfo = $this->cpInfo;
 $sysInfo = $this->sysInfo;
 ?>
@@ -160,19 +164,19 @@ $sysInfo = $this->sysInfo;
 							<div id="dashboard-icons" class="btn-group">
 								
 								<a class="btn" href="index.php?option=com_zmaxcdn&view=items">
-									<img src="components/com_zmaxcdn/images/items.png" alt="<?php echo JText::_('资源管理') ?>" /><br/>
+									<img src="../media/zmaxcdn/assets/images/items.png" alt="<?php echo JText::_('资源管理') ?>" /><br/>
 									<span><?php echo JText::_('资源管理') ?></span>
 								</a>
 								<a class="btn" href="index.php?option=com_categories&view=categories&extension=com_zmaxcdn">
-									<img src="components/com_zmaxcdn/images/categories.png" alt="<?php echo JText::_('类别管理') ?>" /><br />
+									<img src="../media/zmaxcdn/assets/images/categories.png" alt="<?php echo JText::_('类别管理') ?>" /><br />
 									<span><?php echo JText::_('类别管理') ?></span>
 								</a>
 								<a class="btn" href="index.php?option=com_zmaxcdn&view=configs">
-									<img src="components/com_zmaxcdn/images/shezhi.png" alt="<?php echo JText::_('上传设置') ?>" /><br />
+									<img src="../media/zmaxcdn/assets/images/shezhi.png" alt="<?php echo JText::_('上传设置') ?>" /><br />
 									<span><?php echo JText::_('上传设置') ?></span>
 								</a>
 								<a class="btn" href="index.php?option=com_config&view=component&component=com_zmaxcdn">
-									<img src="components/com_zmaxcdn/images/config.png" alt="<?php echo JText::_('系统设置') ?>" /><br />
+									<img src="../media/zmaxcdn/assets/images/config.png" alt="<?php echo JText::_('系统设置') ?>" /><br />
 									<span><?php echo JText::_('系统设置') ?></span>
 								</a>
 							</div>
@@ -184,23 +188,23 @@ $sysInfo = $this->sysInfo;
 							<div id="dashboard-icons" class="btn-group">
 								
 								<a class="btn" href="http://www.joomlachina.cn/shipin-jiaocheng" target="_blank">
-									<img src="components/com_zmaxcdn/images/video.png" alt="<?php echo JText::_('视频教程') ?>" /><br/>
+									<img src="../media/zmaxcdn/assets/images/video.png" alt="<?php echo JText::_('视频教程') ?>" /><br/>
 									<span><?php echo JText::_('视频教程') ?></span>
 								</a>
 								<a class="btn" href="http://www.zmax99.com/forum/index" target="_blank">
-									<img src="components/com_zmaxcdn/images/bug.png" alt="<?php echo JText::_('BUG反馈') ?>" /><br />
+									<img src="../media/zmaxcdn/assets/images/bug.png" alt="<?php echo JText::_('BUG反馈') ?>" /><br />
 									<span><?php echo JText::_('BUG反馈') ?></span>
 								</a>
 								<a class="btn" href="http://www.zmax99.com/forum/index" target="_blank">
-									<img src="components/com_zmaxcdn/images/advice.png" alt="<?php echo JText::_('改进建议') ?>" /><br />
+									<img src="../media/zmaxcdn/assets/images/advice.png" alt="<?php echo JText::_('改进建议') ?>" /><br />
 									<span><?php echo JText::_('改进建议') ?></span>
 								</a>
 								<a class="btn" href="http://www.zmax99.com" target="_blank">
-									<img src="components/com_zmaxcdn/images/develop.png" alt="<?php echo JText::_('开发者网站') ?>" /><br />
+									<img src="../media/zmaxcdn/assets/images/develop.png" alt="<?php echo JText::_('开发者网站') ?>" /><br />
 									<span><?php echo JText::_('开发者网站') ?></span>
 								</a>
 								<a class="btn" href="http://www.zmax99.com" target="_blank">
-									<img src="components/com_zmaxcdn/images/extension.png" alt="<?php echo JText::_('扩展') ?>" /><br/>
+									<img src="../media/zmaxcdn/assets/images/extension.png" alt="<?php echo JText::_('扩展') ?>" /><br/>
 									<span><?php echo JText::_('扩展') ?></span>
 								</a>
 				
@@ -212,7 +216,7 @@ $sysInfo = $this->sysInfo;
 					<div class="span5">
 						<div class="well well-small">
 							<div class="center">
-								<img src="components/com_zmaxcdn/images/zmax_logo.png" / title="ZMAX程序人，中国专业的Joomla扩展开发商!">
+								<img src="../media/zmaxcdn/assets/images/zmax_logo.png" / title="ZMAX程序人，中国专业的Joomla扩展开发商!">
 							</div>
 							<hr class="hr-condensed">
 							<dl class="dl-horizontal">

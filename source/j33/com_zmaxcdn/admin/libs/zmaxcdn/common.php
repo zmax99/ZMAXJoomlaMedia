@@ -93,6 +93,18 @@ class zmaxcdnCommonHelper{
 		$query->where("id =".$id);
 		$db->setQuery($query);
 		$item = $db->loadObject();
+		if(!$item)
+		{
+			if(!$includeSelf)
+			{
+				return null;
+			}
+			else
+			{
+				return array($id);
+			}
+		}
+			
 		
 		$query=$db->getQuery(true);
 		$query->select("id");

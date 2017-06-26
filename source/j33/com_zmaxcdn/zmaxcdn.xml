@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0.0" method="upgrade">
         <name>COM_ZMAXCDN</name>        
-        <creationDate>2017-06-23</creationDate>
+        <creationDate>2017-06-27</creationDate>
         <author>ZMAX团队</author>
         <authorEmail>zhang19min88@163.com</authorEmail>
         <authorUrl>http://www.zmax99.com</authorUrl>
         <copyright>南宁市程序人软件科技有限责任科技有限责任公司保留所有权利！</copyright>
         <license>License GPL2.0 or more</license>
-        <version>4.3.2</version>
+        <version>4.3.3</version>
         <description>
 			<![CDATA[			
 			  <h2>ZMAX团队为中国用户提供的JOOMLA媒体管理解决方案</h2>
@@ -64,9 +64,7 @@
 			<filename>controller.php</filename>
 			<filename>zmaxcdn.php</filename>
 			<folder>controllers</folder>
-			<folder>css</folder>
 			<folder>helpers</folder>
-			<folder>js</folder>
 			<folder>language</folder>
 			<folder>models</folder>
 			<folder>views</folder>
@@ -87,9 +85,7 @@
 					<folder>excels</folder>
 					<folder>source</folder>
 					<folder>helpers</folder>
-					<folder>css</folder>
 					<folder>images</folder>
-					<folder>js</folder>
 					<folder>language</folder>
 					<folder>libs</folder>
 					<folder>extensions</folder>

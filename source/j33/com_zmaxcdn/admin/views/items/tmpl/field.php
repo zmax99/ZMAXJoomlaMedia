@@ -19,30 +19,27 @@ JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 
 $this->function = JRequest::getCmd('function','');
-$curId = $this->state->get('filter.category_id');
-$this->category_id=$curId;
-
 $params = JComponentHelper::getParams("com_zmaxcdn");		
 $yourQiNiuDomain = $params->get("domain");
 $yourQiNiuDomain = trim($yourQiNiuDomain);
 $yourQiNiuDomain = "http://".$yourQiNiuDomain."/";
 
+$app = JFactory::getApplication();
+$clientClass = $app->isAdmin()?"zadmin":"zsite";
+
 $doc = JFactory::getDocument();
-$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/layui/css/layui.css");
-$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/zmaxui/zmaxui-grid.css");
+
+$doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/zmaxcdn.css");
 $doc->addStyleSheet(JUri::root()."/media/zmaxcdn/assets/ui.css");
 $doc->addScript(JUri::root()."/media/zmaxcdn/assets/layui/lay/dest/layui.all.js");
-$doc->addScript(JUri::root()."/media/zmaxcdn/assets/my.js");
+$doc->addScript(JUri::root()."/media/zmaxcdn/assets/zmaxcdn.js");
 
-//提供下载支持
-$doc->addScript(JUri::root()."administrator/components/com_zmaxcdn/js/zmaxcdn.js");
-$doc->addScript(JUri::root()."components/com_zmaxcdn/js/zmaxcdn_download.js");
+//临时调试使用
+$css='';
+if($css){
+	$doc->addStyleDeclaration($css);	
+}
 
-$css='
-li[data-spread=true]>a>i.layui-tree-leaf {
-    color: red;
-}';
-$doc->addStyleDeclaration($css);
 
 //得到配置设置
 $session = JFactory::getSession();
@@ -65,7 +62,12 @@ $this->caller = JFactory::getApplication()->input->get("caller",'plugin',"STRING
 $url = Juri::getInstance()->toString();
 $user = JFactory::getUser();
 $treeCategory = new zmaxtreeCategory();
-$items =$treeCategory->loadCategory("com_zmaxcdn",$user->id,1,1,$curId);
+$items =$treeCategory->loadCategory("com_zmaxcdn",$user->id,1,1,$this->category_id);
+
+
+//echo "<pre>";
+//	print_r($items);
+//echo "</pre>";
 
 
 ?>
@@ -85,12 +87,12 @@ var ZMAX_SYSTEM_AJAX_TOKEN='<?php echo JSession::getFormToken()."=1"; ?>';
 
 
 
-<form action="<?php echo $url;?>" method="post" name="adminForm" id="adminForm" class="forminline" enctype="multipart/form-data">
+<form action="<?php echo $url;?>" method="post" name="adminForm" id="adminForm" class="<?php echo $clientClass;?> forminline" enctype="multipart/form-data">
 <div class="layui-tab layui-tab-brief">
   <ul class="layui-tab-title">
     <li class="layui-this">媒体库</li>
     <li>上传文件</li>
-    <li>管理</li>
+    <li class="system-zmax-todo">管理</li>
   </ul>
   <div class="layui-tab-content">
 	<div class="layui-tab-item layui-show">
@@ -155,8 +157,13 @@ var ZMAX_SYSTEM_AJAX_TOKEN='<?php echo JSession::getFormToken()."=1"; ?>';
     <div class="layui-tab-item">
 		<div class="layui-tab layui-tab-card">
 		  <ul class="layui-tab-title">
-			<li class="layui-this">上传到服务器</li>
+			<?php if($this->config->show_local_upload):?>
+				<li class="layui-this">上传到服务器</li>
+			<?php endif;?>
+			
+			<?php  if($this->config->show_qiniu_upload):?>
 			<li>上传到七牛</li>
+			<?php endif;?>
 		  </ul>
 		  <div class="layui-tab-content">
 			<div class="layui-tab-item layui-show">

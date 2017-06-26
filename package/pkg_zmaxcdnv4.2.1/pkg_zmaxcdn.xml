@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>ZMAXCDN Package</name>
+	<packagename>ZMAXCDN</packagename>
+	<version>4.2.1</version>
+	<creationDate>2016-08-15</creationDate>
+	<author>ZMAX团队</author>
+	<authorEmail>zhang19min88@163.com</authorEmail>
+	<authorUrl>http://www.zmax99.com</authorUrl>
+	<copyright>南宁市程序人软件科技有限责任公司保留所有权利!</copyright>
+	<license>GNU/GPLv3 or later</license>
+	<description>ZMAX媒体管理组件V4.2.0扩展包。让你的Joomla网站更加优化的支持中文，利用国内CDN，加入你的网站!</description>
+
+	<files folder="packages">
+		<filename type="component" id="com_zmaxcdn">com_zmaxcdnv4.2.1_2016-08-15_for_j3x.zip</filename>
+		<filename type="plugin"    group="editors-xtd"     id="plg_editors-xtd_zmaxcdn_insertbtn">plg_zmaxcdn_insertbtn.zip</filename>
+	</files>
+
+	<updateservers>
+		<server type="collection" priority="1" name="ZMAX媒体管理组件更新">http://www.zmax99.com/autoupdate/pkg_zmaxcdn_auto_update.xml</server>
+	</updateservers>
+</extension>

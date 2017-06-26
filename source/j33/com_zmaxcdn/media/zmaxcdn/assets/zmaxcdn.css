@@ -1,0 +1,10 @@
+/*引入ZMAX格子系统*/
+@import url(zmaxui/zmaxui-grid.css); 
+
+/*引入Layui系统*/
+@import url(layui/css/layui.css); 
+
+/*修正通用的CSS样式*/
+input#filter_search {
+    display: inline;
+}

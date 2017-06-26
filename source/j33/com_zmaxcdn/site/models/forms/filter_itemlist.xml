@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_ZMAXCDN_ITEMS_SEARCH_FILTER"
+			hint="文件名，类型，大小"
+			class="js-stools-search-string"
+		/>
+		<field
+			name="type"
+			type="list"
+			label="选择类型"
+			description="按照文件类型过滤"
+			onchange="this.form.submit();"
+			>
+			<option value="">选择类型</option>
+			<option value="text">文本文件</option>
+			<option value="mp3">mp3</option>
+			<option value="mp4">mp4</option>
+			<option value="zip">zip</option>
+			<option value="png">png</option>
+			<option value="jpg">jpg</option>
+			<option value="doc">word文档</option>
+			<option value="excel">Excel文档</option>
+			<option value="pdf">Pdf文档</option>
+			<option value="unknow">其他文档</option>
+		</field>
+	</fields>
+
+	
+	<fields name="list">
+		<field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			onchange="this.form.submit();"
+		/>
+		<field
+			name="fullordering"
+			type="list"
+			label="排序"
+			description="按照下面字段排序"
+			onchange="this.form.submit();"
+			default="id DESC"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="name ASC">标题升序</option>
+			<option value="name DESC">标题降序</option>
+			<option value="size ASC">文件大小升序</option>
+			<option value="size DESC">文件大小降序</option>
+			<option value="date ASC">上传日期升序</option>
+			<option value="date DESC">上传日期降序</option>
+			<option value="hits ASC">下载量升序</option>
+			<option value="hits DESC">下载量降序</option>
+			<option value="published ASC">状态升序</option>
+			<option value="published DESC">状态降序</option>
+			<option value="id ASC">编号升序</option>
+			<option value="id DESC">编号降序</option>
+		</field>
+	</fields>
+	
+</form>

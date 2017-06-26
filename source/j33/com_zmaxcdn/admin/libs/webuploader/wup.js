@@ -340,12 +340,12 @@ jQuery(function() {
 		switch(code)
 		{
 			case 'Q_EXCEED_SIZE_LIMIT': //超过大小限制
-				alert("上传文件的大小超过了指定的大小!文件大小不超过"+FILE_SIZE_LIMIT+"M"); break;
+				layer.alert("上传文件的大小超过了指定的大小!文件大小不超过"+FILE_SIZE_LIMIT+"M",{icon:2}); break;
 			case 'Q_TYPE_DENIED':		//文件类型不正确
-				alert("文件类型不正确，系统可接收的类型为: "+FILE_TYPE_LIMIT+"!");
+				layer.alert("文件类型不正确，系统可接收的类型为: "+FILE_TYPE_LIMIT+"!",{icon:2});
 				break;
 			default:
-				alert("错误：错误码:"+code+" 请联系开发人员!");
+				layer.alert("错误：错误码:"+code+" 请联系开发人员!");
 		}
 		
     };

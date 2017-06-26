@@ -61,7 +61,7 @@
 				type="textarea"
 				name="file_type"
 				label="文件类型"
-				description="允许上传的文件的类型,多种类型使用,分开"
+				description="允许上传的文件的类型,多种类型使用,分开.如果你只允许上传mp3,mp4,png等格式的文件。那么在此处你可以设置为mp4,mp3,png"
 				default="*"
 			/>
 			<field

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<metadata>
+	<layout title="ZMAX资源-资源列表">
+		<message>
+			该菜单类型可以在前台展示一个指定分类中的所有资源的列表，然后供前台用户下载。
+		</message>
+	</layout>
+	
+	<fields name="request" >	
+		<fieldset name="request"
+				label="必填参数">
+			<field 
+			   type="category"
+			   name="catid"
+			   label="选择分类"
+			   extension="com_zmaxcdn"
+			   description="请选择一个分类"
+			   required="true"
+			   />
+		</fieldset>
+	</fields>
+</metadata>
