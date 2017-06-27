@@ -320,6 +320,7 @@ select#select_catid {
     padding: 5px;
     height: 365px;
     overflow-y: auto;
+	width:100%;
 }
 
 .details .filename {
